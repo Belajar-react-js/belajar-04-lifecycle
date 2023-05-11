@@ -1,12 +1,18 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+import { useEffect, useState } from "react";
 
 function App() {
-  // const [count, setCount] = useState(0)
+  //1. membaca state dulu
+  const [greeting, setGreeting] = useState("hallo");
+  console.log("satu");
 
-  return <></>;
+  useEffect(() => {}, []);
+  return (
+    //2. menampilkan jsxnya dan disebut tahap mounting
+    <>
+      {console.log("dua")}
+      <h1>{greeting}</h1>
+    </>
+  );
 }
 
 export default App;
