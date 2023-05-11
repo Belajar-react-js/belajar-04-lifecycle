@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 function ListDigimon() {
   const [digimons, setDigiomons] = useState([]);
@@ -23,15 +24,26 @@ function ListDigimon() {
   return (
     <div>
       <h1>Digimons</h1>
+      <h2 className="text-center mb-5">List Digimon </h2>
       {console.log(2)}
       {digimons.length === 0 ? (
         <span>Loading...</span>
       ) : (
         digimons.map((item, index) => (
           <div key={index}>
-            <img src={item.img} alt="" width={200} />
-            <h3>{item.name}</h3>
-            <h4>{item.level}</h4>
+            <Container>
+              <Row className="my-3">
+                <Col>
+                  <img src={item.img} alt="" width={200} />
+                </Col>
+                <Col>
+                  <h3>{item.name}</h3>
+                </Col>
+                <Col>
+                  <h4>{item.level}</h4>
+                </Col>
+              </Row>
+            </Container>
           </div>
         ))
       )}
